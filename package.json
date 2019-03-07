@@ -1,7 +1,7 @@
 {
-  "name": "bh-lib-mongo",
+  "name": "getjerry-range-collection",
   "version": "1.0.0",
-  "description": "specific CRUD functions for mongoDB",
+  "description": "range collection class",
   "main": "dist/src/index.js",
   "source": "src/index.ts",
   "types": "dist/src/index.d.ts",
