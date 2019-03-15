@@ -69,11 +69,18 @@ export default class RangeCollection {
 
     this.collection.forEach(currentRange => {
       if (this.isOverlap(currentRange, inputRange)) {
-        if (currentRange[0] < inputRange[0]) {
-          newCollection.push([currentRange[0], inputRange[0]]);
-        }
-        if (currentRange[1] > inputRange[1]) {
-          newCollection.push([inputRange[1], currentRange[1]]);
+        if (currentRange[0] < inputRange[0] &&
+          currentRange[1] > inputRange[1] &&
+          inputRange[0] === inputRange[1]
+        ) {
+          newCollection.push(currentRange);
+        } else {
+          if (currentRange[0] < inputRange[0]) {
+            newCollection.push([currentRange[0], inputRange[0]]);
+          }
+          if (currentRange[1] > inputRange[1]) {
+            newCollection.push([inputRange[1], currentRange[1]]);
+          }
         }
       } else {
         newCollection.push(currentRange);
