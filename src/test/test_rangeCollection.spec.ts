@@ -70,6 +70,48 @@ describe('rangeCollection', () => {
       expect(rc.print()).to.equal('[1, 21)');
     });
   });
+  describe('add [0, 200]', () => {
+    it('should display range in format: [0, 200)', () => {
+      rc.add([0, 200]);
+      expect(rc.print()).to.equal('[0, 200)');
+    });
+  });
+  describe('add [50, 50]', () => {
+    it('should display range in format: [0, 200)', () => {
+      rc.add([50, 50]);
+      expect(rc.print()).to.equal('[0, 200)');
+    });
+  });
+  describe('remove [50, 50]', () => {
+    it('should display range in format: [0, 200)', () => {
+      rc.remove([50, 50]);
+      expect(rc.print()).to.equal('[0, 200)');
+    });
+  });
+  describe('add [250, 255]', () => {
+    it('should display range in format: [0, 200) [250, 255)', () => {
+      rc.add([250, 255]);
+      expect(rc.print()).to.equal('[0, 200) [250, 255)');
+    });
+  });
+  describe('remove [250, 250]', () => {
+    it('should display range in format: [0, 200) [250, 255)', () => {
+      rc.remove([250, 250]);
+      expect(rc.print()).to.equal('[0, 200) [250, 255)');
+    });
+  });
+  describe('add [21, 256]', () => {
+    it('should display range in format: [0, 256)', () => {
+      rc.add([21, 256]);
+      expect(rc.print()).to.equal('[0, 256)');
+    });
+  });
+  describe('add [300, 400]', () => {
+    it('should display range in format: [0, 256) [300, 400)', () => {
+      rc.add([300, 400]);
+      expect(rc.print()).to.equal('[0, 256) [300, 400)');
+    });
+  });
   describe('error input 1', () => {
     it('should throw error with message: "Wrong input provided, input range is not an array"', () => {
       expect(function () {
