@@ -1,5 +1,5 @@
 {
-  "name": "getjerry-range-collection",
+  "name": "class-range-collection",
   "version": "1.0.0",
   "description": "range collection class",
   "main": "dist/src/index.js",

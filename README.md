@@ -1,1 +1,1 @@
-# getjerry-range-collection
+# class-range-collection
